@@ -343,17 +343,22 @@ form button:hover {
 
 /* Style the header with a grey background and some padding */
 .menu {
+    display: flex;
     position: fixed;
+    align-items:flex-start;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:flex-start;
     width: 100%;  
-    top: 0; 
-    overflow: hidden;
+    top: 0%;
     z-index: 1000;
+    overflow: hidden;
+    transition: top 0.3s ease-in-out;
     background-color: var(--card-border);
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
+}
+.menu.hide {
+    top: -80px; /* O el valor negativo de la altura de tu menú */
 }
 
 /* Style the header links */
@@ -368,16 +373,15 @@ form button:hover {
   border-radius: 4px;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .menu a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
+
 .menu a:hover {
-  background-color:  ;/* rosa claro */
-  color: white; /* lila más oscuro */
+  background-color:  var(--card-title);
+  color: white; 
 }
 
 /* Style the active/current link*/
@@ -387,9 +391,11 @@ form button:hover {
   font-weight: bold;
 }
 
-/* Float the link section to the right */
+
 .menu-links { 
-    float: inline-end;
+    margin-left: auto; 
+    display: flex;
+    align-self: self-end;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
