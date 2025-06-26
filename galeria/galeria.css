@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}
+
+.galeria div {
+    background-color: #ccc;
+    height: 30vh;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, background-color 0.5s ease;
+}
+
+.galeria div:hover {
+    transform: scale(1.02);
+}
+
+.galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;   
+}
+
+.galeria div:hover {
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+/* Estilos para el lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+}
+
+/* Estilos para los botones */
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+
+.lightbox-btn.prev {
+    left: 2vw;
+}
+
+.lightbox-btn.next {
+    right: 2vw;
+}
