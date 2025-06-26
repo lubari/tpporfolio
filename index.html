@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Lubari</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="index1.css">
+    
+</head>
+
+<body>
+    <div class="menu">
+        <a href="#default" class="logo">Ana Victoria Lubari</a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="imagenes/sociallinkedin_member_70.ico" alt="" class="button-icon-small">
+            </a>
+            <a href="https://www.github.com/lubari" target="_blank">
+                <img src="imagenes/github-logo_icon-icons.com_73546.ico" alt="" class="button-icon-small">
+            </a>
+        </div>
+        <div class="menu-links">
+            <a class="active" href="#home">Inicio</a>
+            <a href="#portfolio">Proyectos</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </div>
+    <main>
+        <header id="portfolio">
+            <h1>Hola! Bienvenido a mi Porfolio</h1>
+            <h3>Soy Ana estudiante de Diseño y Desarrollo Web</h3>
+        </header>
+        
+        <div class="projects-section">
+            <h2>Mis Proyectos</h2>
+                <div id="cardContainer" class="card-container">
+                
+                <div class="card">
+                    <img src="imagenes/blog1.png" alt="Avatar" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Blog de Perfumes</h3>
+                        <p class="card-text">Este es un ejemplo</p>
+                        <button class="card-btn">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/pink, purple & yellow aesthetic gradient background mac (1).jpg" alt="Avatar" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Galería de Imágenes</h3>
+                        <p class="card-text">Este es un ejemplo</p>
+                        <button class="card-btn" href="#">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/Zerallys.jpg" alt="Avatar" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Galería de Imágenes</h3>
+                        <p class="card-text">Este es un ejemplo</p>
+                        <button class="card-btn" href="#">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/185c8db9854a1e9c13a4ec647456cfff.jpg" alt="Avatar" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Galería de Imágenes</h3>
+                        <p class="card-text">Este es un ejemplo</p>
+                        <button class="card-btn" href="#">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="about-section" id="about">
+            <h2>Sobre mí</h2>
+            <div class="about-body">
+                <img src="imagenes/download20240304133108.png" alt="Avatar" class="avatar">
+                <p>
+                    Mi nombre es <strong>Ana</strong>, soy estudiante de la <strong>Tecnicatura en Desarrollo de Software</strong> en la <strong>UADE</strong> y actualmente trabajo como <strong>RPA Developer</strong> en el área de automatización de procesos con <strong>Blue Prism</strong>. 
+                    Me apasiona la tecnología y el aprendizaje constante, por eso estoy profundizando mis conocimientos en <strong>desarrollo web</strong>, aprendiendo <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong> para ampliar mis capacidades como desarrolladora.
+                    <br><br>
+                    Tengo experiencia desarrollando <strong>microservicios en Java</strong> con <strong>JUnit</strong> y estoy en formación continua con <strong>C#</strong> y otras herramientas complementarias del entorno backend. Me motivan los desafíos técnicos, la mejora continua y la posibilidad de crear soluciones que impacten positivamente en las personas.
+                </p>
+
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="contact-section" id="contact">
+            <h2>Contacto</h2>
+            <form action="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required>Escribe tu mensaje...</textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+            <p>© 2025 Ana Victoria Lubari. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="imagenes/sociallinkedin_member_70.ico" alt="" class="button-icon-small">
+                </a>
+                <a href="https://www.github.com/lubari" target="_blank">
+                    <img src="imagenes/github-logo_icon-icons.com_73546.ico" alt="" class="button-icon-small">
+                </a>
+            </div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        let lastScrollY = window.scrollY; // Guarda la última posición de scroll
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling hacia abajo: Ocultar el menú
+                menu.classList.add('hide');
+            } else {
+                // Scrolling hacia arriba: Mostrar el menú
+                menu.classList.remove('hide');
+            }
+
+            // Si el usuario está en la parte superior de la página, el menú siempre debe ser visible
+            if (window.scrollY <= 0) { // Usamos <= 0 para capturar el punto exacto de arriba
+                menu.classList.remove('hide');
+            }
+
+            lastScrollY = window.scrollY; // Actualiza la última posición de scroll
+        });
+    </script>
+</body>
+</html>
