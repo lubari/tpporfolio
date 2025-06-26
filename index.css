@@ -356,6 +356,7 @@ form button:hover {
     background-color: var(--card-border);
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
 }
 .menu.hide {
     top: -80px; /* O el valor negativo de la altura de tu menú */
