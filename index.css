@@ -1,16 +1,26 @@
 :root {
-    --card-border: #e0b7d7;
-    --card-shadow: rgba(189, 70, 249, 0.12);
+    /* Colores base y neutros */
+    --color-light-pink: #fef7fc; /* Nuevo: un rosa casi blanco para fondos muy claros */
+    --color-soft-gray: #f9f9f9;  /* Nuevo: un gris muy suave para fondos */
+    --color-text-dark: #3a323f;  /* Nuevo: un gris oscuro para texto principal, mejor que un negro puro */
+    --color-text-light: #6e5a7a; /* Mismo que tu --card-text, un gris lila suave */
+    --color-purple-accent: #7d4c8e; /* Mismo que tu --card-title, lila oscuro para acentos */
+
+    /* Variables de tarjeta (card) */
+    --card-border: #e8d0f1; /* Un lila más claro y suave */
+    --card-shadow: rgba(189, 70, 249, 0.08); /* Sombra mucho más sutil y menos opaca */
     --card-font: 'Segoe UI', Arial, sans-serif;
-    --card-bg-gradient: linear-gradient(135deg, #f8e1f4 0%, #f6f2ff 100%);
-    --card-img-bg: #f3d1e6;
-    --card-title: #7d4c8e;
-    --card-text: #6e5a7a;
-    --card-btn-bg: linear-gradient(90deg, #b983ba 0%, #e7b5d6 100%);
-    --card-btn-bg-hover: linear-gradient(90deg, #a16ea8 0%, #d18ab9 100%);
-    --card-btn-shadow: rgba(185, 131, 186, 0.08);
-    --card-btn-shadow-hover: rgba(185, 131, 186, 0.18);
-    --card-btn-color: #fff;
+    --card-bg-gradient: linear-gradient(135deg, #fef7fc 0%, #fefcfd 100%); /* Degradado muy claro, casi blanco-rosado */
+    --card-img-bg: #f5e4f2; /* Un rosa pastel suave para el fondo de imagen si no carga */
+    --card-title: var(--color-purple-accent); /* Usa la nueva variable de acento */
+    --card-text: var(--color-text-light); /* Usa la nueva variable de texto */
+
+    /* Variables de botón (btn) */
+    --card-btn-bg: linear-gradient(90deg, #c99bcd 0%, #ebc7e2 100%); /* Degradado de botón ligeramente más suave */
+    --card-btn-bg-hover: linear-gradient(90deg, #b580b8 0%, #e0add4 100%); /* Hover también más suave */
+    --card-btn-shadow: rgba(185, 131, 186, 0.05); /* Sombra de botón muy sutil */
+    --card-btn-shadow-hover: rgba(185, 131, 186, 0.12); /* Sombra de botón hover un poco más notoria */
+    --card-btn-color: #fff; /* Color del texto del botón blanco */
 }
 
 * {
@@ -20,6 +30,7 @@
 }
 body, h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
+    color: var(--color-text-dark); 
 }
 
 main {
@@ -33,7 +44,8 @@ header {
     margin-bottom: 20px;
     width: 100%;
     min-height: 300px; 
-    background: linear-gradient(90deg, #a16ea8 20%, #d18ab9 100%), url('./imagenes/descarga (13).jpg');
+    background: linear-gradient(90deg, rgba(161, 110, 168, 0.6) 0%, rgba(209, 138, 185, 0.6) 100%), url('./imagenes/descarga (13).jpg');
+    background-position: center;
     display: flex;
     background-size: cover; 
     flex-direction: column; 
@@ -45,7 +57,7 @@ header {
 
 header h1 {
     font-size: 4.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
 }
 
 header h3 {
@@ -353,30 +365,33 @@ form button:hover {
     z-index: 1000;
     overflow: hidden;
     transition: top 0.3s ease-in-out;
-    background-color: var(--card-border);
+    background-color: var(--color-light-pink);
     padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 8px gray;
     margin-bottom: 10px;
 }
+
 .menu.hide {
-    top: -80px; /* O el valor negativo de la altura de tu menú */
+    top: -70px; /* O el valor negativo de la altura de tu menú */
 }
 
 /* Style the header links */
 .menu a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+    float: left;
+    color: var(--color-text-dark);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu a.logo {
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: bold;
+  color: var(--card-title);
 }
 
 
@@ -397,16 +412,45 @@ form button:hover {
     margin-left: auto; 
     display: flex;
     align-self: self-end;
+    align-items: center;
+    gap: 15px;
+    margin-right: 1rem; 
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
+     .menu {
+        flex-wrap: wrap; /* Permite que el menú se envuelva en pantallas pequeñas */
+        justify-content: center; /* Centra todo el menú */
+        padding: 10px;
+    }
   .menu a {
     float: none;
     display: block;
     text-align: left;
+    padding: 8px 10px; /* Ajusta el padding para móviles */
+        font-size: 0.9rem;
   }
+  .menu a.logo {
+        width: 100%; /* El logo ocupa toda la línea */
+        text-align: center;
+        margin-bottom: 10px;
+    }
   .menu-links {
     float: none;
   }
+   .social-links,
+    .menu-links {
+        width: 100%;
+        justify-content: center; /* Centra los grupos de enlaces */
+        margin-left: 0; /* Deshacer margin-left: auto; */
+    }
+    .menu-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    /* Ajusta el margin-top del body si la altura del menú cambia en móvil */
+    body {
+        padding-top: 120px; /* Asumiendo que el menú crece en móvil. Ajustar según necesites */
+    }
 }
