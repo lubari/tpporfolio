@@ -145,6 +145,7 @@ header h1, header h3 {
 }
 
 footer {
+    align-self: flex-end;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -180,7 +181,10 @@ footer a:hover {
     justify-content: center;
     padding: 20px;  
 }
-
+.card-container a{
+    text-decoration: none;
+    color: inherit;
+}
 .card {
     display: flex;
     flex-direction: column;
@@ -194,7 +198,10 @@ footer a:hover {
     font-family: var(--card-font);
     transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
 }
-
+.card a{
+    text-decoration: none;
+    color: inherit;
+}
 .card:hover {
     box-shadow: 0 8px 32px var(--card-shadow);
     transform: translateY(-8px) scale(1.03);
@@ -344,7 +351,7 @@ form button {
     font-weight: bold;
     font-size: 1rem;
     box-shadow: 0 4px 10px var(--card-btn-shadow);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease, box-shadow 0.3s ease;
 }
 
 form button:hover {
