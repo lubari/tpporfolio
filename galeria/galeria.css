@@ -69,12 +69,17 @@
     z-index: 1100;
     padding: 1rem 1.5rem;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;  
+    color:white;
+    font-family: var(--card-font);
+    font-size: 1.5rem;
 }
 
 .lightbox-btn.prev {
-    left: 2vw;
+    left: 1vw;
 }
 
 .lightbox-btn.next {
-    right: 2vw;
+    right: 1vw;
 }

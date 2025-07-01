@@ -89,6 +89,16 @@
         // Navegación botones
         const prevBtn = document.querySelector('.lightbox-btn.prev');
         const nextBtn = document.querySelector('.lightbox-btn.next');
+        
+        prevBtn.addEventListener('ArrowLeft', function(e) {
+            e.stopPropagation();
+            mostrarImagen(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('ArrowRight', function(e) {
+            e.stopPropagation();
+            mostrarImagen(currentIndex + 1);
+        });
 
         prevBtn.addEventListener('click', function (e) {
             e.stopPropagation();
