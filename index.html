@@ -36,16 +36,6 @@
             <h2>Mis Proyectos</h2>
             <div id="cardContainer" class="card-container">
                 <div class="card">
-                    <a href="https://lubari.github.io/dyd_tp2/blog/index.html">
-                        <img src="imagenes/blog1.png" alt="Avatar" class="card-img">
-                        <div class="card-body">
-                        <h3 class="card-title">Blog de Perfumes</h3>
-                        <p class="card-text">Este es un ejemplo</p>
-                        <button class="card-btn">Ver más</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
                     <a  href="galeria/index-galeria.html">
                         <img src="imagenes/galeria-preview.png" alt="Avatar" class="card-img">
                         <div class="card-body">
@@ -62,6 +52,16 @@
                             <h3 class="card-title">To Do List</h3>
                             <p class="card-text">Este es un ejemplo</p>
                             <button class="card-btn" href="#">Ver más</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://lubari.github.io/dyd_tp2/blog/index.html">
+                        <img src="imagenes/blog1.png" alt="Avatar" class="card-img">
+                        <div class="card-body">
+                        <h3 class="card-title">Blog de Perfumes</h3>
+                        <p class="card-text">Este es un ejemplo</p>
+                        <button class="card-btn">Ver más</button>
                         </div>
                     </a>
                 </div>
@@ -123,6 +123,7 @@
             <p id="modal-message">¡Mensaje enviado!</p>
         </div>
     </div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <script>
         const menu = document.querySelector('.menu');
@@ -163,7 +164,7 @@
 
         function sendEmail(event) {
             event.preventDefault();
-            emailjs.sendForm('service_zbjx6bm', 'template_dnvm4di', event.target)
+            emailjs.sendForm('service_qsmnqhx', 'template_5geq4dm', event.target)
             .then(() => {
                 showModal("✅ ¡Correo enviado exitosamente!");
                 event.target.reset();
