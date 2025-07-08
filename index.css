@@ -484,6 +484,7 @@ form button:hover {
 
 /* Caja del contenido */
 .modal-content {
+    position: relative; 
   background-color: #fff;
   margin: auto;
   padding: 30px;
@@ -497,13 +498,17 @@ form button:hover {
 
 /* Botón cerrar */
 .close-modal {
+    position: absolute;
+    top: 1px; 
   color: #aaa;
-  float: right;
+   right: 4px;          /* Espaciado desde la derecha */
+  color: #aaa;
+transition: color 0.3s ease; 
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .close-modal:hover {
-  color: #000;
+   color: #7d4c8e;
 }
