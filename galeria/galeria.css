@@ -100,3 +100,21 @@
 .lightbox-btn.next {
     right: 1vw;
 }
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  transform: rotate(90deg);
+  color: #e7b5d6; /* tu color pastel */
+}
