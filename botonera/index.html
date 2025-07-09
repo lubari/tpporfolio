@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botonera de Sonidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .botonera {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+        }
+
+        .boton-sonido {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .boton-sonido:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .boton-sonido:active {
+            transform: translateY(1px);
+        }
+
+        #boton1 {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        #boton2 {
+            background-color: #48dbfb;
+            color: white;
+        }
+
+        #boton3 {
+            background-color: #1dd1a1;
+            color: white;
+        }
+
+        #boton4 {
+            background-color: #feca57;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body>
+    <div class="menu">
+        <a href="../index.html#default" class="logo">Ana Victoria Lubari</a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="../imagenes/sociallinkedin_member_70.ico" alt="" class="button-icon-small">
+            </a>
+            <a href="https://www.github.com/lubari" target="_blank">
+                <img src="../imagenes/github-logo_icon-icons.com_73546.ico" alt="" class="button-icon-small">
+            </a>
+        </div>
+        <div class="menu-links">
+            <a class="active" href="../index.html#home">Inicio</a>
+            <a href="../index.html#portfolio">Proyectos</a>
+            <a href="../index.html#about">Sobre mí</a>
+            <a href="../index.html#contact">Contacto</a>
+        </div>
+    </div>
+    <h1 style="margin-top: 6rem; text-align: center;">Botonera de Sonidos</h1>  
+    <div class="botonera">
+        <button id="boton1" class="boton-sonido"></button>
+        <button id="boton2" class="boton-sonido"></button>
+        <button id="boton3" class="boton-sonido"></button>
+        <button id="boton4" class="boton-sonido"></button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio1 = new Audio('sonidos/miau-triste.mp3');
+            const audio2 = new Audio('sonidos/nooo-la-polizia.mp3');
+            const audio3 = new Audio('sonidos/gato-riendo_6bOc2ur.mp3');
+            const audio4 = new Audio('sonidos/huh-cat-meme.mp3');
+
+            // Obtener referencias a los botones
+            const boton1 = document.getElementById('boton1');
+            const boton2 = document.getElementById('boton2');
+            const boton3 = document.getElementById('boton3');
+            const boton4 = document.getElementById('boton4');
+            // Asignar eventos a los botones usando un bucle
+            const audios = [audio1, audio2, audio3, audio4];
+            // Crear imágenes y asignar src correctamente
+            const img1 = document.createElement('img');
+            img1.src = 'https://images.unsplash.com/photo-1697134065897-d262c9127bd6?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+
+            const img2 = document.createElement('img');
+            img2.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkhX7E2SQADA6IyP7IIAXZ2NkyvBObh-9nZ2bBaOkR-0gzjKQEAN-jjkORh02KlrsHRKU&usqp=CAU';
+
+            const img3 = document.createElement('img');
+            img3.src = 'https://i.pinimg.com/736x/09/38/ab/0938abcdeb5273e2e63072f570c0fbfb.jpg';
+
+            const img4 = document.createElement('img');
+            img4.src = 'https://i.pinimg.com/736x/17/ec/8c/17ec8c1f13ce13a79b708074e8b4ec09.jpg';
+            
+            // Asignar imágenes dentro de los botones y quitar el texto
+            const botonesArr = [boton1, boton2, boton3, boton4];
+            const imgs = [img1, img2, img3, img4];
+
+
+            botonesArr.forEach((boton, i) => {
+                boton.style.width = '200px';
+                boton.style.height = '200px';
+                boton.style.backgroundImage = `url(${imgs[i].src})`;
+                boton.style.backgroundSize = 'cover';
+            });
+            botonesArr.forEach((boton, i) => {
+                boton.addEventListener('click', function () {
+                    if (!audios[i].paused && !audios[i].ended) {
+                        audios[i].pause();
+                        audios[i].currentTime = 0;
+                    } else {
+                        audios[i].currentTime = 0;
+                        audios[i].play();
+
+                        // Detener el audio después de 10 segundos
+                        setTimeout(() => {
+                            audios[i].pause();
+                            audios[i].currentTime = 0;
+                        }, 10000);
+                    }
+                });
+            });
+
+
+            // Opcional: agregar efecto visual al presionar
+            const botones = document.querySelectorAll('.boton-sonido');
+            botones.forEach(boton => {
+                boton.addEventListener('mousedown', function () {
+                    this.style.opacity = '0.8';
+                });
+
+                boton.addEventListener('mouseup', function () {
+                    this.style.opacity = '1';
+                });
+
+                boton.addEventListener('mouseleave', function () {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+    <script src="../script.js"></script>
+    <footer>
+        <p>© 2025 Ana Victoria Lubari. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="../imagenes/sociallinkedin_member_70.ico" alt="" class="button-icon-small">
+            </a>
+            <a href="https://www.github.com/lubari" target="_blank">
+                <img src="../imagenes/github-logo_icon-icons.com_73546.ico" alt="" class="button-icon-small">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
