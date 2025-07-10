@@ -32,10 +32,13 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
     color: var(--color-text-dark); 
 }
-
+body{
+    height: 100vh;
+}
 main {
     padding: 20px;
     margin-top: 60px;
+    flex: 1;
 }
 
 header {
@@ -147,7 +150,6 @@ header h1, header h3 {
 }
 
 footer {
-    align-self: flex-end;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -1,4 +1,6 @@
 .main-todolist {
+  flex: 1;
+    height: 100vh;
     font-family: var(--card-font, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
     max-width: 600px;
     margin: 0 auto;
@@ -7,7 +9,6 @@
     background: var(--card-bg-gradient, linear-gradient(135deg, #f8e1f4 0%, #f6f2ff 100%));
     color: var(--card-text, #6e5a7a);
     border-color: var(--card-border, #e0b7d7);
-    margin-bottom: 27rem;
 }
 
 h1 {
@@ -22,7 +23,6 @@ h1 {
 }
 
 #nuevaTarea {
-    flex: 1;
     padding: 10px;
     border: 1px solid var(--card-border, #e0b7d7);
     border-radius: 4px;
