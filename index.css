@@ -23,6 +23,12 @@
     --card-btn-color: #fff; /* Color del texto del botón blanco */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +40,13 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 body{
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 main {
-    padding: 20px;
-    margin-top: 60px;
-    flex: 1;
+    padding: 80px 20px 20px;  /* top right/left bottom */
+    margin-top: 0;  
+    
 }
 
 header {
@@ -410,6 +418,7 @@ form button:hover {
     padding: 10px 0;
     box-shadow: 0 3px 8px gray;
     margin-bottom: 10px;
+    height: 70px; /* Ajusta según la altura de tu menú */
 }
 
 .menu.hide {
@@ -482,20 +491,6 @@ form button:hover {
   }
    .social-links,
     .menu-links {
-        width: 100%;
-        justify-content: center; /* Centra los grupos de enlaces */
-        margin-left: 0; /* Deshacer margin-left: auto; */
-    }
-    .menu-links {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    /* Ajusta el margin-top del body si la altura del menú cambia en móvil */
-    body {
-        padding-top: 120px; /* Asumiendo que el menú crece en móvil. Ajustar según necesites */
-    }
-}
-
 
 /* Fondo oscuro */
 .modal {
