@@ -1,14 +1,15 @@
 .main-todolist {
-  flex: 1;
-    height: 100vh;
+    display: flex;
+    flex: 1;
+    height: 80vh;
     font-family: var(--card-font, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 0;
-    margin-top: 8rem;
+    padding: 2vh 0;
     background: var(--card-bg-gradient, linear-gradient(135deg, #f8e1f4 0%, #f6f2ff 100%));
     color: var(--card-text, #6e5a7a);
     border-color: var(--card-border, #e0b7d7);
+    justify-content: space-between;
 }
 
 h1 {
@@ -17,9 +18,27 @@ h1 {
 }
 
 .input-container {
-    display: flex;
-    margin-bottom: 20px;
     gap: 10px;
+    padding: 10px;
+}
+
+.edit-input {
+  width: 100%;                 /* Ocupa todo el ancho del contenedor */
+  padding: 8px;           /* Espaciado interno */
+  border: 1px solid var(--card-border, #e0b7d7);  /* Borde coherente con tus inputs */
+  border-radius: 4px;          /* Bordes redondeados */
+  font-size: 16px;             /* Tamaño de letra igual al input principal */
+  color: var(--card-text, #6e5a7a); /* Color de texto coherente */
+  background: #fff;            /* Fondo blanco para destacar */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Sombra interna sutil */
+  outline: none;               /* Quita borde azul del navegador */
+  transition: border 0.3s, box-shadow 0.3s; /* Animación suave */
+  margin-right: 10px; /* Espacio a la derecha para el botón */
+}
+
+.edit-input:focus {
+  border-color: #a16ea8;   /* Color lila suave al enfocar */
+  box-shadow: 0 0 0 3px rgba(161, 110, 168, 0.2); /* Resalta suavemente */
 }
 
 #nuevaTarea {
@@ -62,10 +81,15 @@ button:hover {
     border-radius: 8px;
     margin-bottom: 8px;
     transition: all 0.3s;
+    cursor: grab;
 }
 
 .tarea:hover {
     box-shadow: 0 2px 5px rgba(125, 76, 142, 0.1); /* lila suave */
+}
+
+.tarea:active {
+  cursor: grabbing;
 }
 
 .tarea.completada {
@@ -144,4 +168,39 @@ button.agregar:hover {
 /* Clase para aplicar la animación */
 .fade-in {
   animation: fadeIn 0.4s ease-out forwards;
+}
+
+.kanban-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.kanban-column h2 {
+  text-align: center;
+  color: var(--card-title, #7d4c8e);
+}
+
+.lista-tareas {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.kanban-column.to-do {
+  background: #fce4ec; /* rosa suave */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.kanban-column.in-progress {
+  background: #fff3e0; /* naranja suave */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.kanban-column.done {
+  background: #e8f5e9; /* verde suave */
+  border-radius: 8px;
+  padding: 10px;
 }
