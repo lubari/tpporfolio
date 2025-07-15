@@ -204,3 +204,8 @@ button.agregar:hover {
   border-radius: 8px;
   padding: 10px;
 }
+
+.tarea span,
+.edit-input {
+  width: 100%;
+}
