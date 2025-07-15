@@ -82,18 +82,18 @@ header h1, header h3 {
     margin: 0; 
     padding: 5px 0; 
 }
-
-@media (max-width: 768px) {
-  header {
-    min-height: 30vh;
-    padding: 1rem;
-  }
-  header h1 {
-    font-size: 2.2rem;
-  }
-  header h3 {
-    font-size: 1rem;
-  }
+@media (max-width: 600px) {
+    header {
+        min-height: 180px;
+        padding: 20px 10px;
+        background-position: center top;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header h3 {
+        font-size: 1rem;
+    }
 }
 
 
@@ -192,9 +192,11 @@ footer a {
     font-weight: bold;
     transition: color 0.3s ease;
 }
+
 footer a:hover {
     color: #b983ba; /* un rosa lila más intenso al pasar el mouse */
 }
+
 .button-icon-small{
     width: 24px;
     height: 24px;
