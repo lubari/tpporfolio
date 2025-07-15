@@ -150,7 +150,7 @@
         });
 
            // Enviar formulario por correo
-            (function () {
+        (function () {
             emailjs.init("hCXS_TIN-WrZkwPMv");
         })();
 
@@ -167,6 +167,7 @@
 
         function sendEmail(event) {
             event.preventDefault();
+            emailjs.sendForm('service_qsmnqhx', 'template_pxqh1sr', event.target);
             emailjs.sendForm('service_qsmnqhx', 'template_5geq4dm', event.target)
             .then(() => {
                 showModal("✅ ¡Correo enviado exitosamente!");
