@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="menu">
-        <a href="#default" class="logo">Ana Victoria Lubari</a>
+        <a href="../index.html" class="logo">Ana Victoria Lubari</a>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/ana-victoria-lubari/" target="_blank">
                 <img src="../imagenes/sociallinkedin_member_70.ico" alt="" class="button-icon-small">
@@ -26,7 +26,6 @@
         </div>
     </div>
 
-    
     <main >
         <section class="main-todolist">
             <div class="kanban-column to-do">
@@ -197,14 +196,16 @@
                 }
 
             function renderizarTareas(tareas) {
-                if (tareas.length === 0) {
-                    listaTareas.innerHTML = '<li class="vacío">No hay tareas. ¡Añade alguna!</li>';
-                    return;
-                }
-                
                 listaTareas.innerHTML = '';
                 listaInProgress.innerHTML = '';
                 listaDone.innerHTML = '';
+
+                if (tareas.length === 0) {
+                    listaTareas.innerHTML = '<li class="vacío">No hay tareas. ¡Añade alguna!</li>';
+                    listaInProgress.innerHTML = '<li class="vacío">No hay tareas en progreso.</li>';
+                    listaDone.innerHTML = '<li class="vacío">No hay tareas completadas.</li>';
+                    return;
+                }
                 
                 // Ordenar por fecha (más recientes primero)
                 tareas.sort((a, b) => b.fecha - a.fecha);
@@ -271,6 +272,9 @@
             
             function editarTarea(tarea) {
                 const li = document.querySelector(`li[data-id="${tarea.id}"]`);
+                if (!li) return; // Si no se encuentra la tarea, salir
+                // Evitar duplicados
+                if (li.querySelector('.edit-input')) return;
                 
                 if (li) {
                     const span = li.querySelector('span');
@@ -281,10 +285,11 @@
                     
                     li.replaceChild(input, span);
                     input.focus();
+                    input.selectionStart = input.selectionEnd = input.value.length;
                     
                     // Mostrar botón guardar y ocultar editar
                     li.querySelector('.editar').style.display = 'none';
-                    li.querySelector('.guardar').style.display = 'block';
+                    li.querySelector('.guardar').style.display = 'inline-block';
                     
                     // Guardar al presionar Enter
                     input.addEventListener('keypress', function(e) {

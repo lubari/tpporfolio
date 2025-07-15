@@ -29,7 +29,7 @@ h1 {
 
 .edit-input {
   width: 100%;                 /* Ocupa todo el ancho del contenedor */
-  padding: 8px;           /* Espaciado interno */
+  padding: 8px 10px;        /* Espaciado interno */
   border: 1px solid var(--card-border, #e0b7d7);  /* Borde coherente con tus inputs */
   border-radius: 4px;          /* Bordes redondeados */
   font-size: 16px;             /* Tamaño de letra igual al input principal */
@@ -214,7 +214,6 @@ button.agregar:hover {
 .edit-input {
   width: 100%;
 }
-
 
 /* Responsive para mobile */
 @media (max-width: 700px) {
