@@ -45,6 +45,22 @@
     cursor: pointer;
 }
 
+/* Responsive para mobile */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 1rem;
+    }
+    .galeria div {
+        aspect-ratio: 16/9;
+        border-radius: 1rem;
+    }
+    .galeria img {
+        border-radius: 1rem;
+    }
+}
+
 /* Estilos para el lightbox */
 .lightbox {
     display: none;
@@ -73,6 +89,10 @@
     object-fit: contain;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
+
+
+
+
 
 /* Estilos para los botones */
 .lightbox-btn {

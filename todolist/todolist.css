@@ -1,15 +1,32 @@
 .main-todolist {
-    display: flex;
-    flex: 1;
-    height: 80vh;
-    font-family: var(--card-font, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 2vh 0;
-    background: var(--card-bg-gradient, linear-gradient(135deg, #f8e1f4 0%, #f6f2ff 100%));
-    color: var(--card-text, #6e5a7a);
-    border-color: var(--card-border, #e0b7d7);
-    justify-content: space-between;
+  display: flex;
+  flex: 1;
+  height: 80vh;
+  font-family: var(--card-font, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 2vh 0;
+  background: var(--card-bg-gradient, linear-gradient(135deg, #f8e1f4 0%, #f6f2ff 100%));
+  color: var(--card-text, #6e5a7a);
+  border-color: var(--card-border, #e0b7d7);
+  justify-content: space-between;
+}
+
+/* Responsive para mobile */
+@media (max-width: 700px) {
+  .main-todolist {
+  flex-direction: column;
+  height: auto;
+  max-width: 100%;
+  padding: 1vh 0;
+  }
+  .kanban-column {
+  margin: 10px 0;
+  padding: 8px;
+  }
+  .lista-tareas {
+  max-height: 300px;
+  }
 }
 
 h1 {
