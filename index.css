@@ -270,7 +270,8 @@ footer a:hover {
     padding: 15px; /* Añade un padding interno para que el contenido no toque los bordes */
     text-align: center; /* Centra el texto dentro de la tarjeta */
 }
-.card:hover {
+.card:hover,
+.card a:hover {
     box-shadow: 0 8px 32px var(--card-shadow);
     transform: translateY(-8px) scale(1.03);
     border-color: #b983ba;
