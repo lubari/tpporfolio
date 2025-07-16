@@ -29,15 +29,15 @@
             <a href="https://lubari.github.io/dyd_tp2/index.html">Linktree</a>
         </div>
     </div>
-    <main>
-        <header id="portfolio">
+    <main class="fade-in">
+        <header id="portfolio fade-in">
             <h1>¡Hola! Soy Ana</h1>
             <h3>Estudiante de Diseño y Desarrollo Web  Bienvenido a mi Portfolio</h3>
         </header>
-        <div class="projects-section">
+        <div class="projects-section reveal">
             <h2>Mis Proyectos</h2>
             <div id="cardContainer" class="card-container">
-                <div class="card">
+                <div class="card reveal">
                     <a  href="galeria/index-galeria.html">
                         <img src="imagenes/galeria-preview.png" alt="Avatar" class="card-img">
                         <div class="card-body">
@@ -47,7 +47,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <a href="todolist/todolist.html">
                         <img src="https://agilekrc.com/agile-training-course/kanban-board-example-basic.png" alt="Avatar" class="card-img">
                         <div class="card-body">
@@ -57,7 +57,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <a href="botonera/index.html">
                         <img src="https://i5.walmartimages.com/asr/7646c52b-bfb4-4dd3-9907-ed8751d02c03.7509563d253dbb0ff89f5c75beff3285.jpeg" alt="Avatar" class="card-img">
                     <div class="card-body">
@@ -66,7 +66,7 @@
                         <button class="card-btn" href="#">Ver más</button>
                     </div></a>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <a href="https://lubari.github.io/dyd_tp2/blog/index.html">
                         <img src="imagenes/blog1.png" alt="Avatar" class="card-img">
                         <div class="card-body">
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="about-section" id="about">
+        <div class="about-section reveal" id="about">
             <h2>Sobre mí</h2>
             <div class="about-body">
                 <img src="imagenes/download20240304133108.png" alt="Avatar" class="avatar">
@@ -94,7 +94,7 @@
         </div>
 
 
-        <div class="contact-section" id="contact">
+        <div class="contact-section reveal" id="contact">
             <h2>¡Contactame!</h2>
             <form id="contact-form">
                 <label for="name">Nombre:</label>
@@ -191,5 +191,28 @@
             }
         });
     </script>
+    <script>
+            window.addEventListener('scroll', reveal);
+
+            function reveal() {
+                const reveals = document.querySelectorAll('.reveal');
+
+                reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const revealPoint = 50;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                } else {
+                    reveal.classList.remove('active');
+                }
+                });
+            }
+
+            // Ejecuta reveal al cargar por si hay elementos ya visibles
+            reveal();
+    </script>
+
 </body>
 </html>
