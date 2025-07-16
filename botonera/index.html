@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botonera de Sonidos</title>
+    <link rel="icon" href="../imagenes/portfolio_office_business_baggage_luggage_suitcase_bag_user_interface_briefcase_icon_210807.ico" type="image/x-icon">
     <style>
         body {
             height: 100vh; /* Ocupa toda la altura de la ventana */
@@ -24,7 +25,8 @@
         }
         h1 {
             color: #333;
-            margin-bottom: 30px;
+            padding: 1rem;
+            text-align: center;
         }
 
         .botonera {
@@ -71,6 +73,20 @@
         #boton4 {
             background-color: #feca57;
             color: white;
+        }
+
+        @media (max-width: 600px) {
+            .botonera {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 95vw;
+            }
+            .boton-sonido {
+            width: 100%;
+            min-width: 0;
+            height: 120px;
+            font-size: 16px;
+            }
         }
         footer {
         display: flex;
@@ -126,7 +142,7 @@
         </div>
     </div>
     <main>
-        <h1 style="margin-top: 3rem; text-align: center;">Botonera de Sonidos</h1>  
+        <h1>Botonera de Sonidos</h1>  
         <div class="botonera">
         <button id="boton1" class="boton-sonido"></button>
         <button id="boton2" class="boton-sonido"></button>
