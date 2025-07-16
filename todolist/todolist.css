@@ -27,6 +27,10 @@ h1 {
     padding: 10px;
 }
 
+li {
+  text-align: center;
+}
+
 .edit-input {
   width: 100%;                 /* Ocupa todo el ancho del contenedor */
   padding: 8px 10px;        /* Espaciado interno */
