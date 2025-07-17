@@ -1,6 +1,6 @@
 # Portafolio Web – Ana Victoria Lubari
 
-¡Hola! 👋 Soy Ana Victoria Lubari, estudiante de Desarrollo de Software en UADE y desarrolladora RPA. Este es mi portafolio personal donde muestro algunos de mis proyectos, conocimientos y vías de contacto.
+¡Hola! 👋 Soy Ana Victoria Lubari, estudiante de Desarrollo de Software en UADE. Este es mi portafolio personal donde muestro algunos de mis proyectos, conocimientos y vías de contacto.
 
 🔗 **Sitio en línea:**  
 [https://lubari.github.io/tpporfolio/index.html](https://lubari.github.io/tpporfolio/index.html)
