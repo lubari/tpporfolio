@@ -36,19 +36,6 @@ tpporfolio/
 ## 📬 Envío de mensajes
 
 El formulario de contacto usa EmailJS para enviar correos.  
-Si quieres usar esta funcionalidad en tu propio proyecto:
-
-1. Crear una cuenta en [EmailJS](https://emailjs.com)
-2. Crear un _Service ID_ y _Template ID_
-3. Obtener tu **clave pública**
-4. Incluir el script de EmailJS en tu HTML:
-   ```html
-   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-   ```
-5. Inicializarlo:
-   ```js
-   emailjs.init("public_tuClavePublica");
-   ```
 
 ## 🚀 Cómo clonar el proyecto
 
@@ -61,7 +48,7 @@ Luego simplemente abre `index.html` en tu navegador.
 
 ## 📸 Vista previa
 
-![Vista previa del portfolio](imagenes/blog1.png)
+![Vista previa del portfolio](imagenes/Screenshot_1.png)
 
 ## 📞 Contacto
 
